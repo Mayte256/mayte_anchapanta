@@ -42,12 +42,12 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     
-    # 6. Construir y publicar imagen Docker
+    # 6. Construir y publicar imagen Docker (CORREGIDO - todo en minúsculas)
     - name: 🏗️ Build and push Docker image
       uses: docker/build-push-action@v6
       with:
         context: .
         push: true
         tags: |
-          ghcr.io/${{ github.repository }}/mayte-anchapanta:latest
-          ghcr.io/${{ github.repository }}/mayte-anchapanta:${{ github.sha }}
+          ghcr.io/mayte256/mayte-anchapanta:latest
+          ghcr.io/mayte256/mayte-anchapanta:${{ github.sha }}
